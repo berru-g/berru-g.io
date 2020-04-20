@@ -1,0 +1,133 @@
+<!--SITE VITRINE BERRU 2020-->
+<html>
+	<link rel="stylesheet" href="Berru site vitrine.CSS">
+	
+	<link rel="stylesheet" href="Bouton.js">
+
+<!---->
+		<!--format, mots clefs-->
+		<title>Berru</title>
+		<meta charset='UTF-8'/>	
+		<meta name="description" content="Berru"> <!--nom d'adresse suivi de mots clef pour être répertorié-->
+        <meta name="keywords" content="Berru, clothing, factory, les flaneries, Nantes, DIY,Clavier MIDI, arduino, évenemnt">
+	<head>
+
+<!--easter egg musical dans le logo-->
+	<!------------------------------------------------------------------------------------------------------------------------------>	
+		<audio id="multiaudio1" src="C:\Users\glebe\Music\SAMPLE ABELTON\Synth-KabouterRave.wav" preload="auto"></audio>
+		<a href="javascript:play_multi_sound('multiaudio1');"><p><!--logo -->
+			<!--LOGO --><br />
+			<div style="text-align: center">
+				<!--logo-->
+			<img width="400" height="207" src="C:\Users\glebe\Pictures\DESSIN PAINT\LOGO BLAZE.png" alt="" title="3 PAD virtuel sont cachés dans ce site!"/></div><!--LEGENDE -->
+		</p></a><br />
+	<!------------------------------------------------------------------------------------------------------------------------------>	
+<!-----BARRE------------------------------------------------------------------------------------------------------------------->
+
+	<div id="conteneur">
+<div><audio id="multiaudio3" src="C:\Users\glebe\Music\SAMPLE ABELTON\loops\musicradar-bomb-squad-samples\sounds and fx\BSQ_M504_s.wav" preload="auto"></audio>
+		<a href="javascript:play_multi_sound('multiaudio3');">
+						<!--logo-->
+		<img width="200" height="5" src="C:\Users\glebe\Documents\PROG HTML\BARRE2.png" alt="" title="🥁"/></a><br /></div>
+<!------------BARRE2------------------------------------------------------------------------------------------------------------------------>
+<div> <audio id="multiaudio4" src="C:\Users\glebe\Music\SAMPLE ABELTON\loops\musicradar-bomb-squad-samples\sounds and fx\BSQ_HK MP5_BASSDROP.wav" preload="auto"></audio>
+		<a href="javascript:play_multi_sound('multiaudio4');">			
+			<!--logo-->
+		<img width="200" height="5" src="C:\Users\glebe\Documents\PROG HTML\BARRE.png" alt="" title="🎹" /></a><br /></div>
+	</div>
+	<!------------------------------------------------------------------------------------------------------------------------------->	
+
+
+	   
+  
+<!-----MENU déroulant-------------------------------------------------------------------------------------------->
+
+<ul id="menu-demo2">
+	<li><a href="#">OPEN AIR</a>
+		<ul>  
+			<li><a href="https://www.facebook.com/lesflaneriesnantes/">LES FLANERIES</a></li>
+			<li><a href="file:///C:/Users/glebe/Documents/PROG%20HTML/Berru%20site%20vitrine/LA%20DEMARCHE.html">LA DEMARCHE</a></li>
+			<li><a href="C:\Users\glebe\Documents\les flâneries\PARTNER\PRESENTATION FLANERIE 2020.mp4">LES OBJECTIFS</a></li>
+		
+		</ul>
+	</li>
+	<li><a href="#">CLOTHING</a>
+		<ul>
+			<li><a href="C:\Users\glebe\Pictures\COLLAB BERRU FLANERIE\COM\presentation bxf FINAL.png">LE PROJET</a></li>
+			<li><a href="https://www.facebook.com/BERRUClothing">COLLECTION</a></li>
+			<li><a href="https://www.ecocert.com/fr/certification/textile-biologique-gots">LA DEMARCHE</a></li>
+		
+		</ul>
+	</li>
+	
+	<li><a href="#">FACTORY</a>
+		<ul>
+			<li><a href="https://create.arduino.cc/projecthub/BERRU">ARDUINO</a></li>
+			<li><a href="https://code.sololearn.com/W01aozutbtm0/#css">HTML & CSS</a></li>
+			<li><a href="C:\Users\glebe\Documents\PROG HTML\Berru site vitrine\VIRTUAL PIANO.html">VIRTUAL PIANO</a></li>
+			<!--<li><a href="C:\Users\glebe\Documents\PROG HTML\Berru site vitrine\pad.html">VIRTUAL PAD</a></li>-->
+		
+		</ul>
+	</li>
+	</li>
+</ul>
+
+	</head>
+
+	<body>
+		
+    <!--barre de recherche |<label for="site-search">Cherche:</label>||
+	<input type="search" id="site-search" name="q"
+		   aria-label="Search through site content">
+	<button>trouve</button> ||-->
+
+<!--anime-->
+		
+		
+
+<!--    FOND   teste easter egg audio -->
+		
+		<audio id="multiaudio2" src="C:\Users\glebe\Music\SAMPLE ABELTON\Synth-KabouterRaveCool.wav" preload="auto"></audio>
+		<a href="javascript:play_multi_sound('multiaudio2');"><p><!--PHOTO -->
+			<!--fond du site--> <br />
+		<div>	<img width="1200" height="400" src="C:\Users\glebe\Pictures\DESSIN PAINT\FONT HTML.png" alt="" title="🔊" /><!--LEGENDE -->
+		</p> </a><br /></div>
+
+<!--easter egg-->
+<script type="text/javascript">
+	var channel_max = 10;										// number of channels
+	audiochannels = new Array();
+	for (a=0;a<channel_max;a++) {									// prepare the channels
+		audiochannels[a] = new Array();
+		audiochannels[a]['channel'] = new Audio();						// create a new audio object
+		audiochannels[a]['finished'] = -1;							// expected end time for this channel
+	}
+	function play_multi_sound(s) {
+		for (a=0;a<audiochannels.length;a++) {
+			thistime = new Date();
+			if (audiochannels[a]['finished'] < thistime.getTime()) {			// is this channel finished?
+				audiochannels[a]['finished'] = thistime.getTime() + document.getElementById(s).duration*1000;
+				audiochannels[a]['channel'].src = document.getElementById(s).src;
+				audiochannels[a]['channel'].load();
+				audiochannels[a]['channel'].play();
+				break;
+			}
+		}
+	}
+</script>
+<!--fin du eggggggg-->
+	
+</body>
+
+<footer>
+
+	<h1><p><a href="mailto:g.leberruyer@gmail.com"><img width="70" height="40" src="C:\Users\glebe\Documents\PROG HTML\mail.png"></a></div>
+</div></p></h1>
+<!--<h2><p><a href="https://create.arduino.cc/projecthub/BERRU/midi-wood-keyboard-88053e?ref=user&ref_id=1461626&offset=0"><img width="100" height="60" src="C:\Users\glebe\Documents\PROG HTML\arduino.png"</a></div>
+</div></p></h2> -->
+		  
+					   <a href="C:\Users\glebe\Documents\PROG HTML\Berru site vitrine\pad.html" class="button">PAD</a>
+
+</footer>
+
+</html>
