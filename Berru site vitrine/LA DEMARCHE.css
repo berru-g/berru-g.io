@@ -1,0 +1,28 @@
+h1{
+    text-align: center;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+}
+/*logo*/
+body
+{/* On travaille sur la balise body, donc sur TOUTE la page */
+
+    background-color: black; /* Le fond de la page sera noir */
+    color: white; /* Le texte de la page sera blanc */
+}
+
+img
+{
+    align-content: left;
+}
+
+p
+{
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    width: 350px; /* On a indiqué une largeur (obligatoire) */
+    margin:  auto; /* On peut donc demander à ce que le bloc soit centré avec auto */
+    border: 1px solid black;
+    text-align: justify;
+    padding: 12px;
+    margin-bottom: 20px;
+}

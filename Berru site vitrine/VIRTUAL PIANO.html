@@ -1,0 +1,103 @@
+<html>
+    <meta charset='UTF-8'/>	
+
+    <link rel="stylesheet" href="VIRTUAL PIANO.CSS">
+	<head>
+        
+            
+
+        </head>
+        <!-----------------------------------------body------------------------------------------------------------------------>
+        <body> 
+            <div id="conteneur">
+   
+                <!--DO------------------------------------------------------------------------------------------------->
+                <div><audio id="multiaudio1" src="C:\Users\glebe\Documents\PROG HTML\piano pas de moi\piano\song\si1.OGG" preload="auto"></audio>
+                        <a href="javascript:play_multi_sound('multiaudio1');">
+                                        <!--logo-->
+                        <img width="80" height="600" src="C:\Users\glebe\Documents\PROG HTML\piano\TONE8.png" alt="" title="🥁"/></a><br /></div>
+                <!--DO1------------------------------------------------------------------------------------------------------------------------>
+                <div> <audio id="multiaudio2" src="C:\Users\glebe\Documents\PROG HTML\piano pas de moi\piano\song\do3.OGG" preload="auto"></audio>
+                        <a href="javascript:play_multi_sound('multiaudio2');">			
+                            <!--logo-->
+                        <img width="100" height="600" src="C:\Users\glebe\Documents\PROG HTML\piano\TONE1.png" alt="" title="🎹" /></a><br /></div>
+                <!--RE------------------------------------------------------------------------------------------------->
+                <div><audio id="multiaudio3" src="C:\Users\glebe\Documents\PROG HTML\piano pas de moi\piano\song\re3.OGG" preload="auto"></audio>
+                    <a href="javascript:play_multi_sound('multiaudio3');">
+                                    <!--logo-->
+                    <img width="100" height="600" src="C:\Users\glebe\Documents\PROG HTML\piano\TONE2.png" alt="" title="🥁"/></a><br /></div>
+                <!--MI------------------------------------------------------------------------------------------------------------------------>
+            <div> <audio id="multiaudio4" src="C:\Users\glebe\Documents\PROG HTML\piano pas de moi\piano\song\mi3.OGG" preload="auto"></audio>
+                    <a href="javascript:play_multi_sound('multiaudio4');">			
+                        <!--logo-->
+                    <img width="95" height="600" src="C:\Users\glebe\Documents\PROG HTML\piano\TONE3.png" alt="" title="🎹" /></a><br /></div>
+                <!--FA------------------------------------------------------------------------------------------------------------------------>
+                <div> <audio id="multiaudio5" src="C:\Users\glebe\Documents\PROG HTML\piano pas de moi\piano\song\fa3.OGG" preload="auto"></audio>
+                    <a href="javascript:play_multi_sound('multiaudio5');">			
+                        <!--logo-->
+                    <img width="105" height="600" src="C:\Users\glebe\Documents\PROG HTML\piano\TONE4.png" alt="" title="🎹" /></a><br /></div>
+                <!--SOL------------------------------------------------------------------------------------------------->
+            <div><audio id="multiaudio6" src="C:\Users\glebe\Documents\PROG HTML\piano pas de moi\piano\song\sol3.OGG" preload="auto"></audio>
+                <a href="javascript:play_multi_sound('multiaudio6');">
+                                <!--logo-->
+                <img width="100" height="600" src="C:\Users\glebe\Documents\PROG HTML\piano\TONE5.png" alt="" title="🥁"/></a><br /></div>
+                <!--LA------------------------------------------------------------------------------------------------------------------------>
+            <div> <audio id="multiaudio7" src="C:\Users\glebe\Documents\PROG HTML\piano pas de moi\piano\song\la3.OGG" preload="auto"></audio>
+                <a href="javascript:play_multi_sound('multiaudio7');">			
+                    <!--logo-->
+                <img width="100" height="600" src="C:\Users\glebe\Documents\PROG HTML\piano\TONE6.png" alt="" title="🎹" /></a><br /></div>
+                 <!--SI------------------------------------------------------------------------------------------------------------------------>
+            <div> <audio id="multiaudio8" src="C:\Users\glebe\Documents\PROG HTML\piano pas de moi\piano\song\si3.OGG" preload="auto"></audio>
+                <a href="javascript:play_multi_sound('multiaudio8');">			
+                    <!--logo-->
+                <img width="90" height="600" src="C:\Users\glebe\Documents\PROG HTML\piano\TONE7.png" alt="" title="🎹" /></a><br /></div>  
+                <!---DO3------------------------------------------------------------------------------------->          
+                <div><audio id="multiaudio9" src="C:\Users\glebe\Documents\PROG HTML\piano pas de moi\piano\song\do4.OGG" preload="auto"></audio>
+                    <a href="javascript:play_multi_sound('multiaudio9');">
+                                    <!--logo-->
+                    <img width="85" height="600" src="C:\Users\glebe\Documents\PROG HTML\piano\TONE8.png" alt="" title="🥁"/></a><br /></div>
+            <!--RE------------------------------------------------------------------------------------------------------------------------>
+            <div> <audio id="multiaudio10" src="C:\Users\glebe\Documents\PROG HTML\piano pas de moi\piano\song\re4.OGG" preload="auto"></audio>
+                    <a href="javascript:play_multi_sound('multiaudio10');">			
+                        <!--logo-->
+                    <img width="100" height="600" src="C:\Users\glebe\Documents\PROG HTML\piano\TONE9.png" alt="" title="🎹" /></a><br /></div>
+            <!--MI------------------------------------------------------------------------------------------------->
+            <div><audio id="multiaudio11" src="C:\Users\glebe\Documents\PROG HTML\piano pas de moi\piano\song\mi4.OGG" preload="auto"></audio>
+                <a href="javascript:play_multi_sound('multiaudio11');">
+                                <!--logo-->
+                <img width="100" height="600" src="C:\Users\glebe\Documents\PROG HTML\piano\TONE11.png" alt="" title="🥁"/></a><br /></div>
+            <!--FA------------------------------------------------------------------------------------------------------------------------>
+        <div> <audio id="multiaudio12" src="C:\Users\glebe\Documents\PROG HTML\piano pas de moi\piano\song\fa4.OGG" preload="auto"></audio>
+                <a href="javascript:play_multi_sound('multiaudio12');">			
+                    <!--logo-->
+                <img width="100" height="600" src="C:\Users\glebe\Documents\PROG HTML\piano\TONE12.png" alt="" title="🎹" /></a><br /></div>
+            
+               
+            <!-------------js du lien vers mp3------------------->
+                    <script type="text/javascript">
+                        var channel_max = 10;										// number of channels
+                        audiochannels = new Array();
+                        for (a=0;a<channel_max;a++) {									// prepare the channels
+                            audiochannels[a] = new Array();
+                            audiochannels[a]['channel'] = new Audio();						// create a new audio object
+                            audiochannels[a]['finished'] = -1;							// expected end time for this channel
+                        }
+                        function play_multi_sound(s) {
+                            for (a=0;a<audiochannels.length;a++) {
+                                thistime = new Date();
+                                if (audiochannels[a]['finished'] < thistime.getTime()) {			// is this channel finished?
+                                    audiochannels[a]['finished'] = thistime.getTime() + document.getElementById(s).duration*1000;
+                                    audiochannels[a]['channel'].src = document.getElementById(s).src;
+                                    audiochannels[a]['channel'].load();
+                                    audiochannels[a]['channel'].play();
+                                    break;
+                                }
+                            }
+                        }
+                    </script>
+
+        </body>
+       <footer>
+           <h1><a href="file:///C:/Users/glebe/Documents/PROG%20HTML/Berru%20site%20vitrine/Berru%20site%20vitrine.html">🏠</a></h1> 
+    </footer> 
+        </html>
