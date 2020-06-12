@@ -1,39 +1,120 @@
-h1
+
+ /*----------------------------------------------------------------------------------------------------*/
+body
 {
+    background-color: #000000;
+    color: #999999; /* Le texte  */
     text-align: center;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    color: #000000;
+    font-family: sans-serif ;
 }
 
+/*----------------HEAD BOX ----------------------------------------*/
 #conteneur
 {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between ;
 }
+#conteneur1/*--boutons--*/
+{
+    display: flex;
+    justify-content: space-evenly ;
+    
+    
+}
+#conteneur2 /*--lien reseaux footer--*/
+{
+    display: flex;
+    justify-content: space-evenly ;
+    background-color: #000000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+#conteneur3 /* /////////// fond//FON/////FOND//////////FOND////////////////////////////////    */
+{
+  justify-items: auto;
+  background-image: linear-gradient(to top, #f58608, #f3a90a, #f88989, #64939b, #203e4d, #250125, #000000);
+  background-position: fixed absolute;
+}
+/*--------BOUTON CONTENEUR1-----------------------------------------------------------------------*/
+.button {
+  width: 100px;
+  height: 50px;
+  border-bottom-left-radius : 10px;
+  border-bottom-right-radius : 10px;
+  border-top-left-radius : 10px;
+  border-top-right-radius : 10px;
+/* comment importer son propre curseur bordel?!!  */
+  cursor: url("C:\Users\glebe\Documents\PROG HTML\PRM\CURSOR2.png") ;
+  size cursor: 32px,32px;
 
+  line-height: 10px;
+  position: absolute;/*position de la page*/
+  left: center;
+  top: center;
+  color: #000000;
+  text-decoration: none ;
+  background: linear-gradient(#000000 50%, #000000 50%);
+  text-align: center;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+.button:hover {
+  background: linear-gradient(#8cffc5 50%, #d2aefc 50%);
+}
+.button:active {
+  background: linear-gradient(#d2aefc 50%, #8cffc5 50%);
+}
 
 img
 {
-    align-content: center;
-}
-}
-
-
-
-/*-----------------------------------------------------------------------------*/
-input,
-label {
-    margin: .2rem 0;
+  align:center;
+  max-width : 100%;
+  height: auto;
+  display: block;
 }
 
+/*---------------------SOUS TITRE---STYLE MACHINE A ECRIRE-----------------------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 
-/*logo*/
-body
-{/* On travaille sur la balise body, donc sur TOUTE la page */
-
-    background-color: black; /* Le fond de la page sera noir */
-    color: white; /* Le texte de la page sera blanc */
+body{
+  padding: 0px;
+    
 }
+
+p {
+  border-right: solid 3px #e9e9e9;
+  white-space: nowrap;
+  overflow: hidden;    
+  font-family: 'Courier New', Courier, monospace ;  
+  font-size: 12px;
+  color: #808080; 
+  margin: auto;
+}
+
+/* Animation */
+p {
+    animation: animated-text 5s steps(40,end) 1s 1 normal both,
+               animated-cursor 600ms steps(40,end) infinite;
+               
+  }
+  
+  /* text animation */
+  
+  @keyframes animated-text{
+    from{width: 0;}
+    to{width: 320px;}
+  }
+  
+  /* cursor animations */
+  
+  @keyframes animated-cursor{
+    from{border-right-color: #808080;}
+    to{border-right-color: transparent;}
+  }
+
+
+/*-----------------------------MENU------------------------------------------------*/
+
 
 
 #menu-demo2, #menu-demo2 ul{
@@ -93,67 +174,84 @@ background-image:-webkit-linear-gradient(top, #000200 0%, 000200 100%);
 background-image:linear-gradient(to bottom, #000200 0%, #000200 100%);
 }
 /* background des liens sous menus */
+/*background sous menu 1 off*/
 #menu-demo2 li:first-child li{
-background:#A3A6A4;
+background:#000000;
 }
 #menu-demo2 li:nth-child(2) li{
-background:#A3A6A4;
+background:#000000;
 }
 #menu-demo2 li:nth-child(3) li{
-background:#A3A6A4;
+background:#000000;
 }
 #menu-demo2 li:last-child li{
-background:#A3A6A4;
+background:#000000;
 }
-/* background des liens menus et sous menus au survol */
+/* background des liens menus et sous menus au survol "on" */
+/*background menu 1 on*/
 #menu-demo2 li:first-child:hover, #menu-demo2 li:first-child li:hover{
 background:#828483;
 }
+/* background menu 2 on*/
 #menu-demo2 li:nth-child(2):hover, #menu-demo2 li:nth-child(2) li:hover{
 background:#828483;
 }
+/*typo menu 3 on*/
 #menu-demo2 li:nth-child(3):hover, #menu-demo2 li:nth-child(3) li:hover{
-background:#828483;
+background:#000000;
 }
+/* background menu 3 on*/
 #menu-demo2 li:last-child:hover, #menu-demo2 li:last-child li:hover{
 background:#828483;
 }
-/* les a href */
+/* les a href */ /* couleur de typo menu off et sous menu off*/
 #menu-demo2 a{
 text-decoration:none;
 display:block;
 padding:8px 32px;
-color:#fff;
-font-family:arial;
+color:#ffffff;
+font-family:sans-serif;
 }
 #menu-demo2 ul a{
 padding:8px 0;
 }
-#menu-demo2 li:hover li a{
+/* couleur de typo sous menu off*/
+#menu-demo2 li:hover li a{ 
 color:#fff;
 text-transform:inherit;
-}
+}      
+/* couleur de typo menu*/         
 #menu-demo2 li:hover a, #menu-demo2 li li:hover a{
-color:#000;
+color:#ffffff;
 }
 /*----------------------------------------bouton------------------------------------------------------------*/
-.button {
-    width: 100px;
-    height: 50px;
-    line-height: 50px;
+
+/*------------ISS----------------------------------------------------------------------------*/
+h1  {
+    width: 90px;
+    height: 90px;
     position: absolute;
-    left: 50px;
-    top: 50px;
-    color: #000000;
-    text-decoration: none;
-    background: linear-gradient(#000000 50%, #000000 50%);
-    text-align: center;
-    font-size: 15px;
-    font-family: sans-serif;
-}
-.button:hover {
-    background: linear-gradient(#ffffff 50%, #ffffff 50%);
-}
-.button:active {
-    background: linear-gradient(#9ac0f6 50%, #9ac0f6 50%);
-}
+    animation: mymove 20s infinite;
+  }
+  
+  @keyframes mymove {
+    from {right: 0px;}
+    to {right: 1400px;}
+  }
+/*----------nuage------------------------------------------------------*/
+  i  {
+    opacity: 20%;
+    width: 1500px;
+    height: 700x;
+    position: absolute ;
+    animation: mymove 80s infinite ;
+    
+  }
+  
+  @keyframes mymove2 {
+    from {left: 0px;}
+    to {left:1400px;}
+  }
+
+  /*---------------------------------------------------PAGE2 WILD------------------------------------------------------------------*/
+ 
