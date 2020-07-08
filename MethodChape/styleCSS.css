@@ -1,0 +1,138 @@
+#conteneur
+{
+    display: flex;
+    justify-content: space-around ;
+    align-content: flex-end;
+}
+
+
+.footer{
+   text-align: center;
+   margin-bottom: 20px;
+   text-decoration: none;
+   cursor:wait;
+
+
+}
+
+#logo
+{
+  position:absolute;
+  display:inline-flex;
+  width:auto;
+  height:45px;
+  margin-bottom: auto;
+
+}
+
+body
+{
+
+    background-color: #1a1a1a; /* Le fond de la page sera noir */
+    background-position: fixed absolute;
+    color: #f6ad20; /* Le texte de la page sera blanc */
+    font-family:  sans-serif ;
+}
+/*animation mouvement horizontal (renomer l'img en <h1>)*/
+
+
+.camion  {
+    width: 320px;
+    height: 121px;
+    position: absolute;
+    animation: mymove 20s infinite;
+  }
+  
+  @keyframes mymove {
+    from {right: -10px;}
+    to {right: 1500px;}
+  }
+
+
+img
+{
+    align-content: center;
+   
+}
+
+
+/*-----------------------------------------------------------------------------*/
+
+#menu-demo2, #menu-demo2 ul{
+padding:0;
+margin:0;
+list-style:none;
+text-align:center;
+}
+#menu-demo2 li{
+display:inline-block;
+position:relative;
+border-radius:8px 8px 0 0;
+}
+#menu-demo2 ul li{
+display:inherit;
+border-radius:0;
+}
+#menu-demo2 ul li:hover{
+border-radius:0;
+}
+#menu-demo2 ul li:last-child{
+border-radius:0 0 8px 8px;
+}
+#menu-demo2 ul{
+position:absolute;
+z-index: 1000;
+max-height:0;
+left: 0;
+right: 0;
+overflow:hidden;
+-moz-transition: .8s all .3s;
+-webkit-transition: .8s all .3s;
+transition: .8s all .3s;
+}
+#menu-demo2 li:hover ul{
+max-height:15em;
+}
+/* background des liens menus */
+#menu-demo2 li:first-child{
+background-color: #1a1a1a;
+background-image:-webkit-linear-gradient(top, #1a1a1a 0%, #1a1a1a 100%);
+background-image:linear-gradient(to bottom, #1a1a1a 0%, #1a1a1a 100%);
+}
+#menu-demo2 li:nth-child(2){
+background-color: #1a1a1a;
+background-image: -webkit-linear-gradient(top, #1a1a1a 0%, #1a1a1a 100%);
+background-image:linear-gradient(to bottom, #1a1a1a 0%, #1a1a1a 100%);
+}
+#menu-demo2 li:last-child{
+background-color: #1a1a1a;
+background-image:-webkit-linear-gradient(top, #1a1a1a 0%, #1a1a1a 100%);
+background-image:linear-gradient(to bottom, #1a1a1a 0%, #1a1a1a 100%);
+}/* background des liens sous menus */
+#menu-demo2 li:first-child li{
+background:#1a1a1a;
+}
+#menu-demo2 li:last-child li{
+background:#f6ad20;                                                 /*couleur au survol des sous menu*/
+}
+
+/* les a href */
+#menu-demo2 a{
+text-decoration:none;
+display:block;
+padding:8px 100px;
+color:#f6ad20;
+font-family:  sans-serif ;
+}
+#menu-demo2 ul a{
+padding:8px 0;
+}
+#menu-demo2 li:hover li a{
+color:#fff;
+text-transform:inherit;
+}
+#menu-demo2 li:hover a, #menu-demo2 li li:hover a{
+color:#000;
+}
+
+
