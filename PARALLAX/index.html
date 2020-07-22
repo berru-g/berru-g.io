@@ -1,0 +1,227 @@
+<!--pARALLAX TEST 3------------------------>
+<!--le fichier "scss" ne charge pas? l'appel du fichier avec 
+  <link rel="stylesheet href="scss.scss"> ne marche pas! Et l'incorporation dans le fichier <html>  
+    reflete des fautes de code comme si le "css" est prit en compte mais le "scss" ?
+  ! Fonctionne pourtant sur éditeur en ligne style "codepen"-->
+<!--Essaie avec background fixe d'ammener des élements en mouvement au fil du scroll-
+  
+  img percutante style accident de voiture , objectif, créer un impact visuel!!!-->
+
+<html>
+
+   <link rel="stylesheet" href="index.scss">
+    <title>Parallax</title>
+	<meta charset='UTF-8' />
+	<meta name="description" content="Berru"> 
+<body>
+<head>
+
+    <style>
+// Magic parallax mixins by CodePen Home
+//Sass parallax example
+//thank's Scott Kellum
+
+$parallax-perspective : 1 !default;
+$parallax-element     : "body" !default;
+$parallax-ios         : true !default;
+
+@mixin parallax-init(
+  $perspective  : $parallax-perspective,
+  $element      : $parallax-element,
+  $parallax-ios : $parallax-ios
+  ) {
+  @if $element == "body" {
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      color: white;
+      text-decoration: none; 
+    }
+  }
+  #{$element} {
+    overflow: auto;
+    perspective: $perspective * 1px;
+    transform-style: preserve-3d;
+    // Allows for smooth scrolling but disables parallax effects.
+    @if $parallax-ios == false {
+      -webkit-overflow-scrolling: touch;
+    }
+    // Preserve 3D
+    &, * {
+      transform-style: preserve-3d;
+    }
+  }
+}
+
+@mixin parallax(
+  $distance    : 0,
+  $perspective : $parallax-perspective
+  ) {
+  transform:
+    translateZ($distance * $perspective * 1px)
+    scale(abs($distance - 1))
+  ;
+  z-index: $distance * 1000;
+}
+
+// End of magic parallax mixins
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:100);
+$primary: #fff;
+
+@include parallax-init;
+
+.container {
+  :nth-child(1) {
+    @include parallax(-.4);
+    top: 200px;
+    left: 100px;
+  }
+  :nth-child(2) {
+    @include parallax(.2);
+    top: 200px;
+    left: 500px;
+  }
+  :nth-child(3) {
+    @include parallax(.3);
+    top: 400px;
+    left: 300px; 
+  }
+  :nth-child(4) {
+    @include parallax(.1);
+    top: 500px;
+    left: 500px;
+  }
+  :nth-child(5) {
+    @include parallax(-2);
+    top: 2000px;
+    left: 2000px;
+  }
+  :nth-child(6) {
+    @include parallax(.4);
+    top: 600px;
+    left: 300px;
+  }
+  :nth-child(7) {
+    @include parallax(-1);
+    top: 400px;
+    left: 1000px;
+  }
+  :nth-child(8) {
+    @include parallax(-.4);
+    top: 100px;
+    left: 1400px;
+  }
+  :nth-child(9) {
+    @include parallax(.4);
+    top: 900px;
+    left: 500px;
+  }
+  :nth-child(10) {
+    @include parallax(-1);
+    top: 1600px;
+    left: 100px;
+  }
+  padding: 10%;
+  max-width: 40em;
+  margin: auto;
+  > * {
+    position: absolute;
+  }
+}
+
+body {
+  width:100%;
+  font-family: Roboto, sans-serif;
+  font-weight: 100;
+  background: url(https://github.com/berru-g/berru-g.io/blob/master/cosmos.jpg?raw=true); 
+  line-height: 1;
+  color: $primary; 
+}
+
+.meteorite {
+  opacity:0.6; 
+  max-width:700px; 
+  height:auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+}
+.nuage{
+  width:200%;
+  max-height: 1500px;
+
+  height:auto;
+  }
+  
+h1, h2 {
+  font-weight: 100;
+  margin: 0;
+ 
+  
+}
+
+h1 {
+  font-size: 5em;
+  color: $primary;
+}
+h2 {
+  font-size: 3em;
+  @include parallax(.2);
+}
+a {
+   color: white;
+  text-decoration: none;
+}
+    </style>
+
+  
+<div class="container">
+  
+  <h1><img src="https://github.com/berru-g/berru-g.io/blob/master/Berru%20site%20vitrine/LOGO%20BLAZE.png?raw=true" title="welcome Home" ></h1>
+  
+  
+  <h2><a href="https://cdpn.io/h-lautre/debug/WNrbawy/VGrWNxYoeXzM" title="HOME" >HOME</h2>
+  
+  <h2><a href="https://codepen.io/h-lautre" title="CodePen" >Skill</h2>
+      
+  <h2><a href="https://www.facebook.com/lesflaneriesnantes/"title="les flâneries" >Les Flâneries</a></h2>
+    
+  <!--<h2><a href="https://ustream.tv/channel/9408562"title="ISS en live" >🛰</a></h2>-->
+  
+   <!--IMG------------------------------------------------>
+  <img class="meteorite" src="https://github.com/berru-g/berru-g.io/blob/master/meteorite.png?raw=true" alt=" " 
+       title="meteorite" />
+    
+  <img src="https://github.com/berru-g/berru-g.io/blob/master/cosmonaute2PDEF.png?raw=true" alt=" "
+       title="cosmonaute" />
+    
+  <img src="https://github.com/berru-g/berru-g.io/blob/master/Berru%20site%20vitrine/CURSOR.png?raw=true"           title="cursor"/>
+    
+ 
+  <img src="https://github.com/berru-g/berru-g.io/blob/master/Eco-flane/logoblc.png?raw=true" alt=""
+       title="les-flâneries" />
+  
+  <img class="nuage" src="https://github.com/berru-g/berru-g.io/blob/master/Berru%20site%20vitrine/NUAGE.png?raw=true" alt=" " title="nuage" />
+  
+  
+    
+  
+
+</div>
+
+
+
+</head>
+
+</body>
+</html>
