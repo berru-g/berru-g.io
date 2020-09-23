@@ -1,0 +1,117 @@
+<html>
+   
+<!---clip du dimanche avec le brooo!-44444444444444444//////////-->
+<meta charset='UTF-8' />
+
+	<head>
+<body>
+
+
+	<!--teste oeil codepen src="https://cssanimation.rocks/fr/spheres/"--OEIL/////////////--->
+<div> <img src="C:\Users\glebe\Documents\PROG HTML\PARALLAX\cosmos2.jpg" style="z-index:-2;width:200%; height:auto; position:absolute;"></div>
+
+
+
+	<div id="terre"><img class="terre" src="C:\Users\glebe\Documents\PROG HTML\PARALLAX\LUNE.png" alt="" /></div>
+<style>
+	body {
+/*		background: url(https://github.com/berru-g/berru-g.io/blob/master/cosmos.jpg?raw=true);
+*/		width: 70%;
+		height: auto;
+		background-repeat: relative;	
+	}
+	.terre {
+		z-index: 0;
+		position: absolute;
+		opacity: 1;
+		width: 60%;
+		height: auto;
+		left: 0px;
+		top: 100px;
+		-webkit-animation: tourne 120s infinite;
+		-moz-animation: tourne 120s infinite;
+		animation: tourne 120s infinite;
+	}
+
+	@-webkit-keyframes tourne {
+		0% {
+			-webkit-transform: rotate(0deg);
+		}
+
+		100% {
+
+			-webkit-transform: rotate(360deg);
+		}
+	}
+
+	@-moz-keyframes tourne {
+		0% {
+
+			-moz-transform: rotate(0deg);
+		}
+
+		100% {
+
+			-moz-transform: rotate(360deg);
+		}
+	}
+
+	@keyframes tourne {
+		0% {
+
+			transform: rotate(0deg);
+		}
+
+		100% {
+
+			transform: rotate(360deg);
+		}
+	}
+
+</style><!--FIN DU FOND -------------------------------------------------------------->
+
+
+
+<div> <img class="iss" src="C:\Users\glebe\Documents\PROG HTML\PARALLAX\SAT-SAT.png" style="z-index:1; position:absolute;"></div>
+
+<style>
+    .iss{
+        width:10px;height:auto;
+  animation: ble linear 5s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+
+}
+
+@keyframes ble{
+  0% {
+width:10%;
+    transform:  translate(108px,77px)  ;
+  }
+  16% {
+width:20%;
+    transform:  translate(274px,103px)  ;
+  }
+  37% {
+width:40%;
+    transform:  translate(491px,137px)   ;
+  }
+  63% {
+width:60%;
+    transform:  translate(902px,229px)  ;
+  }
+  93% {
+width:80%;
+    transform:  translate(1142px,265px)  ;
+  }
+  100% {
+width:100%;
+    transform:  translate(1200px,265px)  ;
+  }
+}
+
+</style>
+
+</body>
+    </head>
+</html>

@@ -1,0 +1,706 @@
+<html>
+<!---clip du dimanche avec le bro!-->
+<meta charset='UTF-8' />
+
+<body>
+
+	<head>
+		<div> <img src="C:\Users\glebe\Documents\PROG HTML\PARALLAX\cosmos.jpg"
+				style="z-index:-2;width:200%; height:auto; position:absolute;"></div>
+
+
+		<div class="header">
+			<img class="mars" src="C:\Users\glebe\Documents\PROG HTML\PARALLAX\MARS.png">
+		</div>
+
+		<div id="bkg">
+			
+					<img class="bkg" src="C:\Users\glebe\Documents\PROG HTML\PARALLAX\NEURONES4.png" alt="" /></div>
+		
+		<style>
+			body {
+
+				/*				background: url(https://github.com/berru-g/berru-g.io/blob/master/cosmos.jpg?raw=true);
+*/
+				opacity: 0.9;
+				width: 100%;
+				height: auto;
+				background-repeat: repeat;
+
+			}
+
+
+			.bkg {
+				z-index: 0;
+				position: absolute;
+				opacity: 1;
+				width: 2500px;
+				height: 2500px;
+				left: 500px;
+				top: 400px;
+				-webkit-animation: tourne 120s infinite;
+				-moz-animation: tourne 120s infinite;
+				animation: tourne 120s infinite;
+			}
+
+			.bkg:hover {
+				filter: invert(100%);
+			}
+
+			@-webkit-keyframes tourne {
+				0% {
+					-webkit-transform: rotate(0deg);
+				}
+
+				100% {
+
+					-webkit-transform: rotate(360deg);
+				}
+			}
+
+			@-moz-keyframes tourne {
+				0% {
+
+					-moz-transform: rotate(0deg);
+				}
+
+				100% {
+
+					-moz-transform: rotate(360deg);
+				}
+			}
+
+			@keyframes tourne {
+				0% {
+
+					transform: rotate(0deg);
+				}
+
+				100% {
+
+					transform: rotate(360deg);
+				}
+			}
+
+
+
+
+			/*-----------header--------------------------------------------------------------------------------------*/
+			.header {
+				position: absolute;
+				display: flex;
+				justify-content: center;
+				left: 0px;
+				top: 0px;
+				width: 100%;
+				height: 100px;
+				z-index: 100;
+			}
+
+			/*--------------------------------------------------------------dark mode---*/
+			.mars {
+				justify-content: center;
+				top: 0px;
+				z-index: 100;
+				width: 180px;
+				height: auto;
+				opacity: 1;
+				animation: animationMars linear 30s;
+				animation-iteration-count: infinite;
+				transform-origin: 50% 50%;
+				-webkit-animation: animationMars linear 30s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-transform-origin: 50% 50%;
+				cursor: url(https://github.com/berru-g/berru-g.io/blob/master/PRM/CURSOR32.png?raw=true) 32 32, pointer;
+			}
+
+
+			@-webkit-keyframes animationMars {
+				0% {
+					-webkit-transform: translate(-318px, 500px);
+					/*right,top*/
+				}
+
+				100% {
+					-webkit-transform: translate(2518px, -200px);
+				}
+			}
+
+			.mars:hover {
+				transform: scale(1.5);
+			}
+		</style>
+
+		<!--SCRIPT JS-----AUDIO--------------------------------------------------------------------------------------------------->
+		<script type="text/javascript">
+			var channel_max = 10;										// number of channels
+			audiochannels = new Array();
+			for (a = 0; a < channel_max; a++) {									// prepare the channels
+				audiochannels[a] = new Array();
+				audiochannels[a]['channel'] = new Audio();						// create a new audio object
+				audiochannels[a]['finished'] = -1;							// expected end time for this channel
+			}
+			function play_multi_sound(s) {
+				for (a = 0; a < audiochannels.length; a++) {
+					thistime = new Date();
+					if (audiochannels[a]['finished'] < thistime.getTime()) {			// is this channel finished?
+						audiochannels[a]['finished'] = thistime.getTime() + document.getElementById(s).duration * 1000;
+						audiochannels[a]['channel'].src = document.getElementById(s).src;
+						audiochannels[a]['channel'].load();
+						audiochannels[a]['channel'].play();
+						break;
+					}
+				}
+			}
+		</script>
+
+		<!---------frangin/////------------------------------------------------------------------------------------------->
+		<div style="animationBro" class="frangin">
+			<div>
+				<div><audio id="multiaudio1" src="C:\Users\glebe\Documents\PROG HTML\Projet-bro\intro.mp4"
+					preload="auto"></audio>
+				<a href="javascript:play_multi_sound('multiaudio1');">
+				<img style="transform: rotate(25deg); width:300px;height:auto"
+					src="C:\Users\glebe\Documents\PROG HTML\BERRU.COM\HTML\bro.png" title="" /></div>
+		</div></div>
+		<style>
+			/*------------frangin-------------------------------*/
+			.frangin {
+				z-index: 3;
+				position: absolute;
+				filter: contrast(1.2);
+				opacity: 1;
+				animation: animationBro linear 30s;
+				animation-iteration-count: infinite;
+				transform-origin: 50% 50%;
+				-webkit-animation: animationBro linear 30s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-transform-origin: 50% 50%;
+			}
+
+			@keyframes animationBro {
+				0% {
+					transform: translate(-318px, 264px);
+				}
+
+				100% {
+					transform: translate(2018px, -181px);
+				}
+			}
+
+			@-webkit-keyframes animationBro {
+				0% {
+					-webkit-transform: translate(-318px, 264px);
+				}
+
+				100% {
+					-webkit-transform: translate(2518px, -181px);
+				}
+			}
+
+			/*
+			@keyframes mymove {
+				from {
+					left: -100px;
+				}
+
+				to {
+					left: 1500px;
+				}
+			}
+*/
+			.frangin:hover {
+				transform: scale(1.9);
+				filter: invert(100%);
+			}
+		</style>
+		<!---------wam/////------------------------------------------------------------------------------------------->
+		<div style="keyframes mymove" class="wam">
+			<div>
+				<img style=" transform: rotate(35deg);width:200px;height:auto"
+					src="C:\Users\glebe\Documents\PROG HTML\BERRU.COM\HTML\wam.png" title="" /></div>
+		</div>
+		<style>
+			/*------------w-------------------------------*/
+			.wam {
+				z-index: 2;
+				position: absolute;
+				animation: mymove 50s infinite;
+				margin-top: 350px;
+
+			}
+
+			@keyframes mymove {
+				from {
+					left: -200px;
+				}
+
+				to {
+					left: 2500px;
+				}
+			}
+
+			.wam:hover {
+				transform: scale(0.9);
+				opacity: 0.9;
+				filter: invert(100%);
+			}
+		</style>
+
+		<!-------------------------------------------------------------------------->
+		<div style="animationIss" class="iss">
+			<img class="iss" src="C:\Users\glebe\Documents\PROG HTML\PARALLAX\ISS-ISS.png" style="width:100px;"></img>
+		</div>
+
+		<style>
+			.iss {
+				z-index: 4;
+				animation: animationIss linear 18s;
+				animation-iteration-count: infinite;
+				transform-origin: 50% 50%;
+				-webkit-animation: animationiss linear 18s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-transform-origin: 50% 50%;
+			}
+
+			@keyframes animationiss {
+				0% {
+					transform: translate(1151px, 387px) rotate(0deg);
+				}
+
+				100% {
+					transform: translate(109px, -282px) rotate(740deg);
+				}
+			}
+
+			@-webkit-keyframes animationiss {
+				0% {
+					-webkit-transform: translate(1151px, 387px) rotate(0deg);
+				}
+
+				100% {
+					-webkit-transform: translate(109px, -282px) rotate(740deg);
+				}
+			}
+		</style>
+
+		<!-------------------------------------------------------->
+		<div style="animationMeduse" class="meduse">
+			<!--<iframe src="https://giphy.com/embed/TXXCopuiZiifm" width="480" height="216" frameBorder="0" class="meduse"
+				allowFullScreen></iframe>-->
+		</div>
+		<style>
+			.meduse {
+				z-index: 1;
+				opacity: 0.9;
+				border-radius: 90%;
+				border-top: 20px solid transparent;
+				border-bottom: 20px solid transparent;
+				border-right: 100px solid transparent;
+				border-left: 100px solid transparent;
+				animation: animationMeduse ease-in-out 15s;
+				animation-iteration-count: infinite;
+				transform-origin: 50% 50%;
+				-webkit-animation: animationMeduse ease-in-out 15s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-transform-origin: 50% 50%;
+				-moz-animation: animationMeduse ease-in-out 15s;
+				-moz-animation-iteration-count: infinite;
+				-moz-transform-origin: 50% 50%;
+				-o-animation: animationMeduse ease-in-out 15s;
+				-o-animation-iteration-count: infinite;
+				-o-transform-origin: 50% 50%;
+				-ms-animation: animationMeduse ease-in-out 15s;
+				-ms-animation-iteration-count: infinite;
+				-ms-transform-origin: 50% 50%;
+			}
+
+			@keyframes animationMeduse {
+				0% {
+					transform: translate(678px, 424px);
+				}
+
+				100% {
+					transform: translate(710px, -260px);
+				}
+			}
+
+			@-moz-keyframes animationMeduse {
+				0% {
+					-moz-transform: translate(678px, 424px);
+				}
+
+				100% {
+					-moz-transform: translate(710px, -260px);
+				}
+			}
+
+			@-webkit-keyframes animationMeduse {
+				0% {
+					-webkit-transform: translate(678px, 424px);
+				}
+
+				100% {
+					-webkit-transform: translate(710px, -260px);
+				}
+			}
+
+			@-o-keyframes animationMeduse {
+				0% {
+					-o-transform: translate(678px, 424px);
+				}
+
+				100% {
+					-o-transform: translate(710px, -260px);
+				}
+			}
+
+			@-ms-keyframes animationMeduse {
+				0% {
+					-ms-transform: translate(678px, 424px);
+				}
+
+				100% {
+					-ms-transform: translate(710px, -260px);
+				}
+			}
+		</style>
+		<!-------------------------------------------------------------------------->
+		<div style="animationMet" class="met">
+			<img class="met" src="C:\Users\glebe\Documents\PROG HTML\PARALLAX\meteorite.png" style="width:100px;"></img>
+		</div>
+
+		<style>
+			.met {
+				z-index: 5;
+				animation: animationMet ease-in-out 5s;
+				animation-iteration-count: infinite;
+				transform-origin: 50% 50%;
+				-webkit-animation: animationMet ease-in-out 5s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-transform-origin: 50% 50%;
+				-moz-animation: animationMet ease-in-out 5s;
+				-moz-animation-iteration-count: infinite;
+				-moz-transform-origin: 50% 50%;
+				-o-animation: animationMet ease-in-out 5s;
+				-o-animation-iteration-count: infinite;
+				-o-transform-origin: 50% 50%;
+				-ms-animation: animationMet ease-in-out 5s;
+				-ms-animation-iteration-count: infinite;
+				-ms-transform-origin: 50% 50%;
+			}
+
+			@keyframes animationMet {
+				0% {
+					transform: translate(1202px, -261px);
+				}
+
+				100% {
+					transform: translate(-295px, 528px);
+				}
+			}
+
+			@-moz-keyframes animationMet {
+				0% {
+					-moz-transform: translate(1202px, -261px);
+				}
+
+				100% {
+					-moz-transform: translate(-295px, 528px);
+				}
+			}
+
+			@-webkit-keyframes animationMet {
+				0% {
+					-webkit-transform: translate(1202px, -261px);
+				}
+
+				100% {
+					-webkit-transform: translate(-295px, 528px);
+				}
+			}
+
+			@-o-keyframes animationMet {
+				0% {
+					-o-transform: translate(1202px, -261px);
+				}
+
+				100% {
+					-o-transform: translate(-295px, 528px);
+				}
+			}
+
+			@-ms-keyframes animationMet {
+				0% {
+					-ms-transform: translate(1202px, -261px);
+				}
+
+				100% {
+					-ms-transform: translate(-295px, 528px);
+				}
+			}
+		</style>
+		<div style="animatePorte" class="porte">
+			<img class="porte" src="C:\Users\glebe\Documents\PROG HTML\PARALLAX\porte.png"
+				style="width:200px; height:auto;"></img>
+
+		</div>
+		<style>
+			.porte {
+				z-index: 6;
+				animation: animationPorte ease-in-out 25s;
+				animation-iteration-count: infinite;
+				transform-origin: 50% 50%;
+				-webkit-animation: animationPorte ease-in-out 25s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-transform-origin: 50% 50%;
+				-moz-animation: animationPorte ease-in-out 25s;
+				-moz-animation-iteration-count: infinite;
+				-moz-transform-origin: 50% 50%;
+				-o-animation: animationPorte ease-in-out 25s;
+				-o-animation-iteration-count: infinite;
+				-o-transform-origin: 50% 50%;
+				-ms-animation: animationPorte ease-in-out 25s;
+				-ms-animation-iteration-count: infinite;
+				-ms-transform-origin: 50% 50%;
+			}
+
+			@keyframes animationPorte {
+				0% {
+					transform: translate(89px, -286px) rotate(0deg);
+				}
+
+				100% {
+					transform: translate(762px, 477px) rotate(180deg);
+				}
+			}
+
+			@-moz-keyframes animationPorte {
+				0% {
+					-moz-transform: translate(89px, -286px) rotate(0deg);
+				}
+
+				100% {
+					-moz-transform: translate(762px, 477px) rotate(180deg);
+				}
+			}
+
+			@-webkit-keyframes animationPorte {
+				0% {
+					-webkit-transform: translate(89px, -286px) rotate(0deg);
+				}
+
+				100% {
+					-webkit-transform: translate(762px, 477px) rotate(180deg);
+				}
+			}
+
+			@-o-keyframes animationPorte {
+				0% {
+					-o-transform: translate(89px, -286px) rotate(0deg);
+				}
+
+				100% {
+					-o-transform: translate(762px, 477px) rotate(180deg);
+				}
+			}
+
+			@-ms-keyframes animationPorte {
+				0% {
+					-ms-transform: translate(89px, -286px) rotate(0deg);
+				}
+
+				100% {
+					-ms-transform: translate(762px, 477px) rotate(180deg);
+				}
+			}
+		</style>
+
+
+
+		<!----------------pizza------------------------------------------------------------>
+		<div class="animationImage" style="z-index:10;">
+			<div><audio id="multiaudio2"
+					src="C:\Users\glebe\Documents\PROG HTML\Projet-bro\suite.mp4"
+					preload="auto"></audio>
+				<a href="javascript:play_multi_sound('multiaudio2');">
+					<img class="pizza-animation" src="C:\Users\glebe\Documents\PROG HTML\PARALLAX\pizza.png"
+						title=""></img>
+			
+		</div>
+		<style>
+        .pizza-animation {
+            z-index: 3;
+			width:10px;height:auto;
+			position:absolute; 
+            width: 500px;
+            height: auto;
+            animation: animationImage linear 14s;
+            animation-iteration-count: infinite;
+			
+        }
+		.pizza-animation:hover {
+				transform: scale(1.5);
+			}
+
+        @keyframes animationImage {
+            0% {
+				
+                transform: translate(2218px, 262px) rotate(82deg);
+            }
+
+            100% {
+				
+                transform: translate(0px, 0px) rotate(414deg);
+            }
+        }
+		</style>
+
+		<!--Etoile random et filante head! //JS et css="star" de Oscar Salazar dans-moonlight desert-->
+		<div class="shooting">
+			<div class="trail"></div>
+			<div class="core"></div>
+		</div>
+		<!-- SCRIPT JS-------------------------------------------------------------->
+		<script>
+			(() => {
+				const max_stars = 100;
+				const stars = [];
+				""
+				for (let i = 0; i < max_stars; i++) {
+					const star = document.createElement('span');
+					const size = (Math.floor(Math.random() * 3) + 1);
+					star.className = 'star';
+					star.style.width = size + 'px';
+					star.style.height = size + 'px';
+					star.style.background = `rgba(255, 255, 177, ${Math.random()})`;
+					star.style.top = Math.ceil(Math.random() * 100) + '%';
+					star.style.left = Math.ceil(Math.random() * 100) + '%';
+					stars.push(star);
+					document.body.appendChild(star);
+				}
+
+				for (let j = 0; j < max_stars * 0.6; j++) {
+					const star = stars[j];
+					star.style.animationName = 'glow';
+					star.style.animationDelay = (Math.floor(Math.random() * 6) + 1) + 's';
+					star.style.animationDuration = (Math.floor(Math.random() * 6) + 1) + 's';
+				}
+			})();
+		</script>
+		<!--STYLE CSS------------------------------------------------------------------------------------------------>
+		<style>
+			.star {
+				z-index: 2;
+				position: absolute;
+				width: 1px;
+				height: 1px;
+				border-radius: 50%;
+				animation-iteration-count: infinite;
+			}
+
+			.shooting {
+				z-index: 2;
+				position: absolute;
+				top: 30%;
+				left: 30%;
+				width: 500px;
+				height: 5px;
+				border-radius: 5px;
+				display: inline-block;
+				transform: rotateZ(-45deg);
+			}
+
+			.shooting .core {
+				z-index: 2;
+				display: inline-block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 4px;
+				height: 4px;
+				border-radius: 50%;
+				background: #f7f7f1;
+				box-shadow: 0px 0px 3px 1px #ffffff,
+					0px 0px 10px 5px #fffffff1;
+				animation: 24s linear infinite core;
+			}
+
+			.shooting .trail {
+				z-index: 2;
+				display: inline-block;
+				position: absolute;
+				content: '';
+				width: 100px;
+				height: 5px;
+				border-radius: 50% 0 0 50%;
+				background: linear-gradient(to right,
+						#f7c9aedc,
+						#f3f3b1d5 50%,
+						transparent);
+				top: 0px;
+				left: 0;
+				animation: 24s linear infinite trail;
+			}
+
+			@keyframes core {
+				0% {
+					left: 100%;
+					opacity: 1;
+				}
+
+				15% {
+					left: 30%;
+					opacity: 0.8;
+				}
+
+				30% {
+					left: 0;
+					opacity: 0;
+				}
+
+				100% {
+					left: 0;
+					opacity: 0;
+				}
+			}
+
+			@keyframes trail {
+				0% {
+					left: 100%;
+					opacity: 1;
+					width: 0;
+				}
+
+				15% {
+					left: 35%;
+					opacity: 0.5;
+					width: 150px;
+				}
+
+				30% {
+					left: 0;
+					opacity: 0;
+					width: 150px;
+				}
+
+				100% {
+					left: 0;
+					opacity: 0;
+					width: 150px;
+				}
+			}
+		</style>
+
+	</head>
+</body>
+
+<!--
+	<div class="footer" style="position:absolute; bottom:-200px;left:100px;display:flex; ">
+	<img src="C:\Users\glebe\Documents\PROG HTML\BERRU.COM\HTML\moustique.png"
+		style="justify-content:center;width:2900px; height:auto;"></a>
+</div>
+-->
+
+
+</html>

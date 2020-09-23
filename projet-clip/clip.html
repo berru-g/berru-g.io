@@ -1,0 +1,412 @@
+<html>
+   
+<!---clip du dimanche avec le fopen!-333333333333//////////-->
+<meta charset='UTF-8' />
+
+	<head>
+<body>
+
+
+	<!--teste oeil codepen src="https://cssanimation.rocks/fr/spheres/"--OEIL/////////////--->
+<div> <img src="C:\Users\glebe\Documents\PROG HTML\PARALLAX\cosmos.jpg" style="z-index:-2;width:200%; height:auto; position:absolute;"></div>
+
+
+
+	<div id="bkg">
+		<div><audio id="multiaudio3" src="C:\Users\glebe\Documents\PROG HTML\Projet-bro\640151main_Go at Throttle Up 2.mp3"
+			preload="auto"></audio>
+		<a href="javascript:play_multi_sound('multiaudio3');">
+			<img class="terre" src="C:\Users\glebe\Documents\PROG HTML\PARALLAX\TERRE.png" alt="" /></div>
+<style>
+	body {
+/*		background: url(https://github.com/berru-g/berru-g.io/blob/master/cosmos.jpg?raw=true);
+*/		width: 100%;
+		height: auto;
+		background-repeat: relative;	
+	}
+	.terre {
+		z-index: 0;
+		position: absolute;
+		opacity: 1;
+		width: 100%;
+		height: auto;
+		left: 0px;
+		top: 100px;
+		-webkit-animation: tourne 120s infinite;
+		-moz-animation: tourne 120s infinite;
+		animation: tourne 120s infinite;
+	}
+
+	@-webkit-keyframes tourne {
+		0% {
+			-webkit-transform: rotate(0deg);
+		}
+
+		100% {
+
+			-webkit-transform: rotate(360deg);
+		}
+	}
+
+	@-moz-keyframes tourne {
+		0% {
+
+			-moz-transform: rotate(0deg);
+		}
+
+		100% {
+
+			-moz-transform: rotate(360deg);
+		}
+	}
+
+	@keyframes tourne {
+		0% {
+
+			transform: rotate(0deg);
+		}
+
+		100% {
+
+			transform: rotate(360deg);
+		}
+	}
+
+</style><!--FIN DU FOND -------------------------------------------------------------->
+
+
+<section class="stage">
+	<figure class="ball">
+		<span class="iris"></span>
+	</figure>
+</section>
+
+<div ><a href="C:\Users\glebe\Documents\PROG HTML\BERRU.COM\HTML\PAD-fontawesome.html"><img class="astro" src="C:\Users\glebe\Documents\PROG HTML\Projet-bro\cosmonaute.png"/></a> </div>
+
+<style>
+	.astro {
+		position:absolute;
+		display:flex;
+		z-index: 1;
+		width: 2800px;
+		height: auto;
+		top: 1500px;
+		left: 2150px;
+		
+	}
+
+	@keyframes move-eye-skew {
+		0% {
+			transform: none;
+		}
+
+		20% {
+			transform: translateX(-68px) translateY(30px) skewX(15deg) skewY(-10deg) scale(0.95);
+		}
+
+		25%,
+		44% {
+			transform: none;
+		}
+
+		50%,
+		60% {
+			transform: translateX(68px) translateY(-40px) skewX(5deg) skewY(2deg) scaleX(0.95);
+		}
+
+		66%,
+		100% {
+			transform: none;
+		}
+	}
+
+	.ball {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		border-radius: 50%;
+		position: relative;
+		background: radial-gradient(circle at 50% 40%, #fcfcfc, #efeff1 66%, #9b5050 100%);
+	}
+
+	.ball:after {
+		content: "";
+		position: absolute;
+		top: 5%;
+		left: 10%;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
+		transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+	}
+
+	.iris {
+		width: 40%;
+		height: 40%;
+		margin: 30%;
+		border-radius: 50%;
+		background: radial-gradient(circle at 50% 50%, #20b476 0%, #a9ff6f 30%, #8bb243 100%);
+		transform: translateX(68px) translateY(-60px) skewX(15deg) skewY(2deg);
+		position: absolute;
+		animation: move-eye-skew 5s ease-out infinite;
+	}
+
+	.iris:before {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 37.5%;
+		height: 37.5%;
+		border-radius: 50%;
+		top: 31.25%;
+		left: 31.25%;
+		background: black;
+	}
+
+	.iris:after {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 31.25%;
+		height: 31.25%;
+		border-radius: 50%;
+		top: 18.75%;
+		left: 18.75%;
+		background: rgba(255, 255, 255, 0.2);
+	}
+
+	.ball .shadow {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+		transform: rotateX(90deg) translateZ(-150px);
+		z-index: 1;
+	}
+
+	.stage {
+		z-index: 2;
+		width: 600px;
+		height: 600px;
+		display: inline-block;
+		margin: 20px;
+		perspective: 1200px;
+		perspective-origin: 50% 50%;
+		transform-style: preserve-3d;
+		transform: rotateY(0.01deg);
+		margin-top:1980px;
+		margin-left:3270px;
+	}
+
+
+</style>
+	<!----------------pizza------------------------------------------------------------>
+    <div class="animationImage">
+		<div><audio id="multiaudio1" src="C:\Users\glebe\Documents\PROG HTML\Projet-bro\640384main_Nice_to_be_in_Orbit.m4r"
+			preload="auto"></audio>
+		<a href="javascript:play_multi_sound('multiaudio1');">
+        <img class="pizza-animation" src="C:\Users\glebe\Documents\PROG HTML\PARALLAX\pizza.png"></img>
+	</div></a>
+	</div>
+	<!--SCRIPT JS-----AUDIO--------------------------------------------------------------------------------------------------->
+	<script type="text/javascript">
+		var channel_max = 10;										// number of channels
+		audiochannels = new Array();
+		for (a = 0; a < channel_max; a++) {									// prepare the channels
+			audiochannels[a] = new Array();
+			audiochannels[a]['channel'] = new Audio();						// create a new audio object
+			audiochannels[a]['finished'] = -1;							// expected end time for this channel
+		}
+		function play_multi_sound(s) {
+			for (a = 0; a < audiochannels.length; a++) {
+				thistime = new Date();
+				if (audiochannels[a]['finished'] < thistime.getTime()) {			// is this channel finished?
+					audiochannels[a]['finished'] = thistime.getTime() + document.getElementById(s).duration * 1000;
+					audiochannels[a]['channel'].src = document.getElementById(s).src;
+					audiochannels[a]['channel'].load();
+					audiochannels[a]['channel'].play();
+					break;
+				}
+			}
+		}
+	</script>
+    <style>
+        .pizza-animation {
+            z-index: 3;
+			width:10px;height:auto;
+			position:absolute; 
+            width: 500px;
+            height: auto;
+            animation: animationImage linear 14s;
+            animation-iteration-count: infinite;
+			
+        }
+		.pizza-animation:hover {
+				transform: scale(1.5);
+			}
+
+        @keyframes animationImage {
+            0% {
+				
+                transform: translate(0px, 0px) rotate(82deg);
+            }
+
+            100% {
+				
+                transform: translate(6218px, 262px) rotate(414deg);
+            }
+        }
+
+	</style>
+	
+
+
+<!--Etoile random et filante head! //JS et css="star" de Oscar Salazar dans-moonlight desert-->
+<div class="shooting">
+	<div class="trail"></div>
+	<div class="core"></div>
+</div>
+<!-- SCRIPT JS-------------------------------------------------------------->
+<script>
+	(() => {
+		const max_stars = 100;
+		const stars = [];
+		""
+		for (let i = 0; i < max_stars; i++) {
+			const star = document.createElement('span');
+			const size = (Math.floor(Math.random() * 3) + 1);
+			star.className = 'star';
+			star.style.width = size + 'px';
+			star.style.height = size + 'px';
+			star.style.background = `rgba(255, 255, 177, ${Math.random()})`;
+			star.style.top = Math.ceil(Math.random() * 100) + '%';
+			star.style.left = Math.ceil(Math.random() * 100) + '%';
+			stars.push(star);
+			document.body.appendChild(star);
+		}
+
+		for (let j = 0; j < max_stars * 0.6; j++) {
+			const star = stars[j];
+			star.style.animationName = 'glow';
+			star.style.animationDelay = (Math.floor(Math.random() * 6) + 1) + 's';
+			star.style.animationDuration = (Math.floor(Math.random() * 6) + 1) + 's';
+		}
+	})();
+</script>
+<!--STYLE CSS------------------------------------------------------------------------------------------------>
+<style>
+	.star {
+		z-index: 2;
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		border-radius: 50%;
+		animation-iteration-count: infinite;
+	}
+
+	.shooting {
+		z-index: 2;
+		position: absolute;
+		top: 30%;
+		left: 30%;
+		width: 500px;
+		height: 5px;
+		border-radius: 5px;
+		display: inline-block;
+		transform: rotateZ(-45deg);
+	}
+
+	.shooting .core {
+		z-index: 2;
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 4px;
+		height: 4px;
+		border-radius: 50%;
+		background: #f7f7f1;
+		box-shadow: 0px 0px 3px 1px #ffffff,
+			0px 0px 10px 5px #fffffff1;
+		animation: 24s linear infinite core;
+	}
+
+	.shooting .trail {
+		z-index: 2;
+		display: inline-block;
+		position: absolute;
+		content: '';
+		width: 100px;
+		height: 5px;
+		border-radius: 50% 0 0 50%;
+		background: linear-gradient(to right,
+				#f7c9aedc,
+				#f3f3b1d5 50%,
+				transparent);
+		top: 0px;
+		left: 0;
+		animation: 24s linear infinite trail;
+	}
+
+	@keyframes core {
+		0% {
+			left: 100%;
+			opacity: 1;
+		}
+
+		15% {
+			left: 30%;
+			opacity: 0.8;
+		}
+
+		30% {
+			left: 0;
+			opacity: 0;
+		}
+
+		100% {
+			left: 0;
+			opacity: 0;
+		}
+	}
+
+	@keyframes trail {
+		0% {
+			left: 100%;
+			opacity: 1;
+			width: 0;
+		}
+
+		15% {
+			left: 35%;
+			opacity: 0.5;
+			width: 150px;
+		}
+
+		30% {
+			left: 0;
+			opacity: 0;
+			width: 150px;
+		}
+
+		100% {
+			left: 0;
+			opacity: 0;
+			width: 150px;
+		}
+	}
+</style>
+
+
+
+</body>
+
+
+
+		
+	</head>
+
+
+</html>
