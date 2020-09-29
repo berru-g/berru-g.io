@@ -1,117 +1,306 @@
 <html>
-   
-<!---clip du dimanche avec le brooo!-44444444444444444//////////-->
+
 <meta charset='UTF-8' />
 
-	<head>
+<head>
+
 <body>
+<!--
+	<div class="gradient"></div>-->
 
+<!--
+		<div id="terre"><img class="lune" src="C:\Users\glebe\Documents\PROG HTML\Projet-clip\LUNE.png" alt="" /></div>
 
-	<!--teste oeil codepen src="https://cssanimation.rocks/fr/spheres/"--OEIL/////////////--->
-<div> <img src="C:\Users\glebe\Documents\PROG HTML\PARALLAX\cosmos2.jpg" style="z-index:-2;width:200%; height:auto; position:absolute;"></div>
-
-
-
-	<div id="terre"><img class="terre" src="C:\Users\glebe\Documents\PROG HTML\PARALLAX\LUNE.png" alt="" /></div>
-<style>
-	body {
-/*		background: url(https://github.com/berru-g/berru-g.io/blob/master/cosmos.jpg?raw=true);
-*/		width: 70%;
-		height: auto;
-		background-repeat: relative;	
-	}
-	.terre {
-		z-index: 0;
-		position: absolute;
-		opacity: 1;
-		width: 60%;
-		height: auto;
-		left: 0px;
-		top: 100px;
-		-webkit-animation: tourne 120s infinite;
-		-moz-animation: tourne 120s infinite;
-		animation: tourne 120s infinite;
-	}
-
-	@-webkit-keyframes tourne {
-		0% {
-			-webkit-transform: rotate(0deg);
+-->
+	<style>
+		html {
+			width: 100%;
+			height: 100%;
 		}
 
-		100% {
+	
 
-			-webkit-transform: rotate(360deg);
+		/*-----------------------------------------------------------
+		body {
+            background-image: url("cosmos.jpg"), url("cosmos2.jpg"), url("cosmos3.jpg"), url("cosmos4.jpg"), url("cosmos5.jpg"), url("cosmos6.jpg");
+            background-repeat: no-repeat;
+            max-width: 100%;
+            max-height: 100%;
+            background-size: cover;
+            animation-name: backswitch;
+            animation-duration: 120s;
+            animation-iteration-count: infinite;
+            
+
+        }
+
+        @keyframes backswitch {
+            0% {
+                cosmos-image: url("cosmos.png");
+            }
+
+            20% {
+                background-image: url("cosmos2.jpg");
+            }
+
+            40% {
+                background-image: url("cosmos3.jpg");
+            }
+
+            60% {
+                background-image: url("cosmos4.jpg");
+            }
+
+            80% {
+                background-image: url("cosmos5.jpg");
+            }
+
+            100% {
+                background-image: url("cosmos6.jpg");
+            }
+        }
+		---------------------------------------------------------------------------*/
+
+		.lune {
+			z-index: 3;
+			position: absolute;
+			opacity: 0.4;
+			filter: brightness(0.6);
+			width: 10%;
+			height: auto;
+			right: 40px;
+			top: 40px;
+			-webkit-animation: tourne 120s infinite;
+			-moz-animation: tourne 120s infinite;
+			animation: tourne 120s infinite;
 		}
-	}
 
-	@-moz-keyframes tourne {
-		0% {
+		@-webkit-keyframes tourne {
+			0% {
+				-webkit-transform: rotate(0deg);
+			}
 
-			-moz-transform: rotate(0deg);
+			100% {
+
+				-webkit-transform: rotate(360deg);
+			}
+		}
+	</style>
+
+
+
+	<!-----------------------bkg------------------------------------------------------------->
+	<!---------<div class="city" style="bottom:0px; width:100%;height:auto;z-index:3;position:absolute;">
+		<img src="C:\Users\glebe\Documents\PROG HTML\Projet-clip\city.png">
+	</div>---------------------------------------------------------------------->
+
+	<div style="keyframes City">
+		<img class="fond" src="C:\Users\glebe\Documents\PROG HTML\Projet-clip\jour-nuit.jpg" />
+	</div>
+
+	</div>
+	<style>
+		.fond {
+			background-image: linear-gradient(to top, #f58608, #f3a90a, #f88989, #203e4d, #203e4d, #250125, #000000);
+
+			z-index: 2;
+			opacity: 1;
+			width: 100%px;
+			height: auto;
+			position: absolute;
+			top: 100px;/*-100*/
+			left: 0px;
+			animation: City 40s infinite;
 		}
 
-		100% {
+		@keyframes City {
+			from {
+				left: 0px;
+			}
 
-			-moz-transform: rotate(360deg);
-		}
-	}
-
-	@keyframes tourne {
-		0% {
-
-			transform: rotate(0deg);
+			to {
+				left: -4500px;
+			}
 		}
 
-		100% {
+	</style>
 
-			transform: rotate(360deg);
+
+
+
+	<!----------------NUAGE----------
+		<div style="keyframes mynuage">
+		<img class="nuage" src="C:\Users\glebe\Documents\PROG HTML\Projet-clip\nuage.png" />
+	</div>----------------------------------------------------->
+	
+
+	</div>
+	<style>
+		.nuage {
+			z-index: 4;
+			opacity: 0.6;
+			width: 100%;
+			height: auto;
+			position: absolute;
+			top: 0px;
+			animation: mynuage 110s infinite;
+
 		}
-	}
-
-</style><!--FIN DU FOND -------------------------------------------------------------->
 
 
+		@keyframes mynuage {
+			from {
+				right: -100px;
+			}
 
-<div> <img class="iss" src="C:\Users\glebe\Documents\PROG HTML\PARALLAX\SAT-SAT.png" style="z-index:1; position:absolute;"></div>
+			to {
+				right: 1400px;
+			}
+		}
+	</style>
 
-<style>
-    .iss{
-        width:10px;height:auto;
-  animation: ble linear 5s;
-  animation-iteration-count: infinite;
-  transform-origin: 50% 50%;
+	<!----------------cloud-----
+		<div style="keyframes mymove" id="cloud">
+		<img class="cloud" src="C:\Users\glebe\Documents\PROG HTML\BERRU.COM\PNG\NUAGE.png" />
+	</div>---------------------------------------------------------->
+	
 
-}
+	</div>
+	<style>
+		.cloud {
+			z-index: 2;
+			opacity: 30%;
+			width: 1500px;
+			height: 700x;
+			position: absolute;
+			top: 100px;
+			animation: mymove 100s infinite;
 
-@keyframes ble{
-  0% {
-width:10%;
-    transform:  translate(108px,77px)  ;
-  }
-  16% {
-width:20%;
-    transform:  translate(274px,103px)  ;
-  }
-  37% {
-width:40%;
-    transform:  translate(491px,137px)   ;
-  }
-  63% {
-width:60%;
-    transform:  translate(902px,229px)  ;
-  }
-  93% {
-width:80%;
-    transform:  translate(1142px,265px)  ;
-  }
-  100% {
-width:100%;
-    transform:  translate(1200px,265px)  ;
-  }
-}
+		}
 
-</style>
+		@keyframes mymove {
+			from {
+				left: 0px;
+			}
+
+			to {
+				left: 1400px;
+			}
+		}
+	</style>
+
+
+	<canvas class="myCanvas" style="z-index:1;position:absolute;width:1500px;height:950px;bottom:-150px;">
+		<p>.</p>
+	</canvas>
+
+	<script>
+		const canvas = document.querySelector('.myCanvas');
+		const width = canvas.width = window.innerWidth;
+		const height = canvas.height = window.innerHeight;
+		const ctx = canvas.getContext('2d');
+
+		ctx.fillStyle = '#414149';
+		ctx.fillRect(0, 0, width, height);
+
+
+		ctx.translate(width / 2, height / 2);
+
+		let image = new Image();
+		image.src = 'walk-covid.png';
+		image.onload = draw;
+
+
+		let sprite = 0;
+		let posX = 0;
+
+		function draw() {
+			ctx.fillRect(-(width / 2), -(height / 2), width, height);
+			ctx.drawImage(image, (sprite * 102), 0, 102, 148, 0 + posX, -74, 102, 148);
+			//			ctx.drawImage(image, (sprite * 102), 0, 102, 148, 0 + posX, -74, 102, 148);
+			//102 de base, puis 200 pour la guitare
+
+			if (posX % 13 === 0) {
+				if (sprite === 5) {
+					sprite = 0;
+				} else {
+					sprite++;
+				}
+			}
+
+			if (posX > width / 2) {
+				newStartPos = -((width / 2) + 102);
+				posX = Math.ceil(newStartPos);
+				console.log(posX);
+			} else {
+				posX += 2;
+			}
+
+			window.requestAnimationFrame(draw);
+		};
+
+	</script>
+
+
+	<!--
+		    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas class="myCanvas">
+      <p>Add suitable fallback here.</p>
+    </canvas>
+
+    <script>
+
+      const canvas = document.querySelector('.myCanvas');
+      const width = canvas.width = window.innerWidth;
+      const height = canvas.height = window.innerHeight;
+      const ctx = canvas.getContext('2d');
+
+      ctx.fillStyle = 'rgb(0,0,0)';
+      ctx.fillRect(0,0,width,height);
+
+    </script>
+	-->
+	
+		<div style="keyframes footer" >
+		<img class="buisson" src="C:\Users\glebe\Documents\PROG HTML\Projet-clip\streetx2.2.png" />
+	</div>
+
+
+	</div>
+	<style>
+		.buisson {
+			z-index: 4;
+			opacity: 1;
+			width: 100%px;
+			height: auto;
+			position: absolute;
+			bottom: -90px;
+			left: 0px;
+			animation: footer 30s infinite;
+			opacity: 1;
+
+		}
+
+		@keyframes footer {
+			from {
+				left: 0px;
+			}
+
+			to {
+				left: -6000px;
+			}
+		}
+	</style>
+
 
 </body>
-    </head>
+</head>
+
 </html>
