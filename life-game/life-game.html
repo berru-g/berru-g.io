@@ -1,0 +1,147 @@
+<html>
+    <head>
+        <meta charset='UTF-8' />
+<!--animation pour clip
+obj:
+créer un jeux: un personnage style mario( sens unique ) 
+le but est de gagner des points de karma, 
+ne pas perdre ses points amour,(gagner des points lors d'une rencontre, les perdre automatiquement au bout d'une min de jeu, car y'a tjr une fin!)
+gagner des points d'assurance,(en fesant différentes experience)
+conserver ses points ego.()
+-->
+        <body>
+            <div class="sprite right"></div>
+<p>Life Game</p>
+	<style>
+		.sprite {
+	width: 102px;
+	height: 148px;
+	margin-top: 40px;
+	z-index:5;
+}
+
+.right {
+	background-image: url(C:\Users\glebe\Documents\PROG HTML\projet-clip\walk-perso-fixeD.png);
+}
+
+.left {
+	background-image: url(C:\Users\glebe\Documents\PROG HTML\projet-clip\walk-perso-fixeG.png);
+}
+
+.walk-right {
+	background-image: url(C:\Users\glebe\Documents\PROG HTML\projet-clip\walk-persoD.png);
+	-webkit-animation: walk .9s steps(6) infinite;
+	-moz-animation: walk .9s steps(6) infinite;
+	-ms-animation: walk .9s steps(6) infinite;
+	-o-animation: walk .9s steps(6) infinite;
+	animation: walk .9s steps(6) infinite;
+}
+
+.walk-left {
+	background-image: url(C:\Users\glebe\Documents\PROG HTML\projet-clip\walk-persoG.png);
+	-webkit-animation: walk .9s steps(6) infinite;
+	-moz-animation: walk .9s steps(6) infinite;
+	-ms-animation: walk .9s steps(6) infinite;
+	-o-animation: walk .9s steps(6) infinite;
+	animation: walk .9s steps(6) infinite;
+}
+
+@-webkit-keyframes walk {
+	from { background-position: 0px; }
+	to { background-position: -612px; }
+}
+@-moz-keyframes walk {
+	from { background-position: 0px; }
+	to { background-position: -612px; }
+}
+@-ms-keyframes walk {
+	from { background-position: 0px; }
+	to { background-position: -612px; }
+}
+@-o-keyframes walk {
+	from { background-position: 0px; }
+	to { background-position: -612px; }
+}
+@-keyframes walk {
+	from { background-position: 0px; }
+	to { background-position: -612px; }
+}
+	</style>
+	<script>
+		(function() {
+
+var sprite = document.querySelector('.sprite'),
+	key = {left: false, right: false},
+	trans = 0,
+	property = getTransformProperty(sprite);
+
+function getTransformProperty(element) {
+	var properties = [
+		'transform',
+		'WebkitTransform',
+		'msTransform',
+		'MozTransform',
+		'OTransform'
+	];
+	var p;
+	while (p = properties.shift()) {
+		if (typeof element.style[p] != 'undefined') {
+			return p;
+		}
+	}
+	return false;
+}
+
+function translate() {
+	sprite.style[property] = 'translateX(' + trans + 'px)';
+}
+
+function walk(e) {
+	var keyCode = e.keyCode;
+	if (keyCode === 39) {
+		key.right = true;
+	} else if (keyCode === 37) {
+		key.left = true;
+	}
+if (key.right === true) {
+		trans += 10;
+		translate();
+		sprite.classList.remove('left');
+		sprite.classList.add('right');
+		sprite.classList.add('walk-right');
+	} else if (key.left === true) {
+		trans -= 10;
+		translate();
+		sprite.classList.remove('right');
+		sprite.classList.add('left');
+		sprite.classList.add('walk-left');
+	}
+}
+
+function stop(e) {
+	var keyCode = e.keyCode;
+	if (keyCode === 39) {
+		key.right = false;
+	} else if (keyCode === 37) {
+		key.left = false;
+	}
+	if (key.right === false) {
+		sprite.classList.remove('walk-right');
+	} if (key.left === false) {
+		sprite.classList.remove('walk-left');
+	}
+}
+
+document.addEventListener('keydown', walk, false);
+document.addEventListener('keyup', stop, false);
+
+})();
+    </script>
+
+
+
+
+    
+        </body>
+    </head>
+</html>
