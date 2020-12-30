@@ -1,0 +1,354 @@
+<html>
+
+<head>
+    <meta charset='UTF-8' />
+    <title></title>
+    <!--projet clip bro Noel 2020
+-->
+
+<body>
+
+ 
+        <div id="fondd" style="width:auto; height:100%; position:fixed;">
+           <img src="z.png">
+          
+        </div>
+     
+       <!-- <div id="premier-plan" style="width:90%; height:auto; position:absolute;z-index:7;bottom:0px;">
+            <img src="POUBELLE.png">
+        </div>-->
+        <!--https://github.com/berru-g/berru-g.io/blob/master/life-game/POUBELLE.png?raw=true-->
+        <style>
+     /*
+            body {
+            background-image: url("cosmos.jpg"), url("cosmos2.jpg"), url("cosmos3.jpg"), url("cosmos4.jpg"), url("cosmos5.jpg"), url("cosmos6.jpg");
+            background-repeat: no-repeat;
+            max-width: 100%;
+            max-height: 100%;
+            z-index:-1;
+            background-size: cover;
+            animation-name: backswitch; 
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+            
+
+        }
+
+        @keyframes backswitch {
+            0% {
+                cosmos-image: url("cosmos.png");
+            }
+
+            20% {
+                background-image: url("cosmos2.jpg");
+            }
+
+            40% {
+                background-image: url("cosmos3.jpg");
+            }
+
+            60% {
+                background-image: url("cosmos4.jpg");
+            }
+
+            80% {
+                background-image: url("cosmos5.jpg");
+            }
+
+            100% {
+                background-image: url("cosmos6.jpg");
+            }
+        }
+     */
+    
+            
+            body {
+    
+                background-repeat: no-repeat;
+                width:100%;
+                height:100%;
+                font-family: 'Courier New', Courier, monospace;
+                background-color: #43434d;
+                --text-color: #fff;
+                position: relative;
+
+            }
+            
+            </style>
+        <!---------------------////////////////////////////:SPRITE//////////////////////////------------------------------------------------------->
+        <div class="sprite right"></div>
+
+        <style>
+            .sprite {
+                width: 200px;
+                height: 474px;
+                margin-top: 200px;
+                z-index: 5;
+                position: absolute;
+                object-position: absolute;
+
+            }
+
+            .right {
+                background-image: url(walk-bro-fixe.png);
+            }
+
+            /*https://github.com/berru-g/berru-g.io/blob/master/life-game/walk-perso-fixeD.png?raw=true*/
+
+            .left {
+                background-image: url(walk-bro-fixeG.png);
+            }/* https://github.com/berru-g/berru-g.io/blob/master/life-game/walk-perso-fixeG.png?raw=true*/
+
+            /*teste claque option-https://github.com/berru-g/berru-g.io/blob/master/life-game/walk-perso-fixeClaque.png?raw=true--*/
+            .claque {
+                background-image: url(walk-perso-fixeClaque.png);
+            }
+
+            /*teste zen option-https://github.com/berru-g/berru-g.io/blob/master/life-game/walk-perso-fixeZen.png?raw=true--*/
+            .zen {
+                background-image: url(walk-perso-fixeZen.png);
+            }
+
+            /*teste -https://github.com/berru-g/berru-g.io/blob/master/life-game/walk-perso-fixesupersaian.png?raw=true--*/
+            .supersaian {
+                background-image: url(walk-perso-fixesupersaian.png);
+            }
+              /*teste -https://github.com/berru-g/berru-g.io/blob/master/life-game/shot.png?raw=true--*/
+              .shot {
+                background-image: url(shot.png);
+            }
+
+            /*https://github.com/berru-g/berru-g.io/blob/master/life-game/walk-perso-fixeG.png?raw=true*/
+
+            .walk-right {
+                background-image: url(walk-bro-D.png);
+                /*https://github.com/berru-g/berru-g.io/blob/master/life-game/walk-persoD.png?raw=true*/
+                -webkit-animation: walk .9s steps(6) infinite;
+                /*
+            -moz-animation: walk .9s steps(6) infinite;
+            -ms-animation: walk .9s steps(6) infinite;
+            -o-animation: walk .9s steps(6) infinite;
+            animation: walk .9s steps(6) infinite;
+*/
+
+            }
+
+            .walk-left {
+                background-image: url(walk-bro-G.png);
+                /*https://github.com/berru-g/berru-g.io/blob/master/life-game/walk-persoG.png?raw=true*/
+                -webkit-animation: walk .9s steps(6) infinite;
+                /*
+            -moz-animation: walk .9s steps(6) infinite;
+            -ms-animation: walk .9s steps(6) infinite;
+            -o-animation: walk .9s steps(6) infinite;
+            animation: walk .9s steps(6) infinite;
+         */
+            }
+
+            @-webkit-keyframes walk {
+                from {
+                    background-position: 0px;
+                }
+
+                to {
+                    background-position: -1200px;
+
+                }
+            }
+</style>
+   
+
+
+        <canvas id="myCanvas" width="500" height="auto"></canvas>
+
+        <audio id="myAudio" src="C:\Users\glebe\Documents\PROG HTML\life-game\zen-mode.wav"></audio>
+        <audio id="claque" src="C:\Users\glebe\Documents\PROG HTML\BERRU.COM\MP3\808-clap-1.wav"></audio>
+        <audio id="shot" src="C:\Users\glebe\Music\SAMPLE ABELTON\loops\musicradar-bomb-squad-samples\sounds and fx\shot.wav"></audio>
+
+        <script>
+
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////
+            //script d'origine repimpé
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            (function () {
+                var myAudio = document.getElementById('myAudio');
+                var claque = document.getElementById('claque');
+                var zen = document.getElementById('zen');
+                var supersaian = document.getElementById('supersaian');
+                var shot = document.getElementById('shot');
+                var sprite = document.querySelector('.sprite'),
+
+                    key = { left: false, right: false, claque: false, zen: false, supersaian: false,shot:false },//,up:false},
+                    trans = 0,
+                    property = getTransformProperty(sprite);
+
+                function getTransformProperty(element) {
+                    var properties = [
+                        'transform',
+                        'WebkitTransform',
+                        'msTransform',
+                        'MozTransform',
+                        'OTransform'
+                    ];
+                    var p;
+                    while (p = properties.shift()) {
+                        if (typeof element.style[p] != 'fixed') {
+                            return p;
+                        }
+                    }
+                    return false;
+                }
+
+                function translate() {
+                    sprite.style[property] = 'translateX(' + trans + 'px)';
+                }
+                //////collision detection a mettre en place ici?
+      
+
+                function walk(e) {
+                    var keyCode = e.keyCode;
+                    if (keyCode === 39) {
+                        key.right = true;
+                        //
+                    } if (keyCode === 32) {
+                        key.supersaian = true;
+                        /////////////////////////////
+                    } if (keyCode === 38) {
+                        key.claque = true;
+                        claque.play();
+                        ////////////////////////////  
+                        /////////////////////////////
+                    } if (keyCode === 13) {
+                        key.shot = true;
+                        shot.play();
+                        ////////////////////////////
+                    } if (keyCode === 40) {
+                        key.zen = true;
+                        myAudio.play();
+                        ////////////////////////////  
+                    } else if (keyCode === 37) {
+                        key.left = true;
+                    }
+                    if (key.right === true) {
+                        trans += 7;// var x avancé du perso
+                        translate();
+                        sprite.classList.remove('left');
+                        sprite.classList.add('right');
+                        sprite.classList.add('walk-right');
+                        ////////////////////////////////////
+                    } if (key.claque === true) {
+                        trans += 0;
+                        translate();
+                        // a-revoir
+                        sprite.classList.remove('claque');
+                        sprite.classList.add('claque');
+                        sprite.classList.add('walk-claque');
+                        // document.getElementById("karma").innerHTML += "🌑";
+
+                        /////////////////////////////////////
+                        ////////////////////////////////////
+                    } if (key.zen === true) {
+                        trans += 0;
+                        translate();
+                        document.getElementById("santé").innerHTML += "💚";
+                        sprite.classList.remove('zen');
+                        sprite.classList.add('zen');
+                        sprite.classList.add('zen');
+                        /////////////////////////////////////
+                        ////////////////////////////////////
+                    } if (key.supersaian === true) {
+                        trans += 0;
+                        translate();
+                        //  document.getElementById("").innerHTML += "";
+                        sprite.classList.remove('supersaian');
+                        sprite.classList.add('supersaian');
+                        sprite.classList.add('walk-supersaian');
+                        ////shot
+                    } if (key.shot === true) {
+                        trans += 0;
+                        translate();
+                        sprite.classList.remove('shot');
+                        sprite.classList.add('shot');
+                        sprite.classList.add('walk-shot');
+                     
+                        //////////////////////////////
+                    } else if (key.left === true) {
+                        trans -= 7;
+                        translate();
+                        sprite.classList.remove('right');
+                        sprite.classList.add('left');
+                        sprite.classList.add('walk-left');
+                    }
+                }
+
+                function stop(e) {
+                    var keyCode = e.keyCode;
+                    if (keyCode === 39) {
+                        key.right = false;
+                        ///////////////////////
+                    } if (keyCode === 32) {
+                        key.supersaian = false;
+                        ///////////////////////
+                    } if (keyCode === 38) {
+                        key.claque = false;
+                        ///////////////////////
+                    } if (keyCode === 13) {
+                        key.shot = false;
+                        ///////////////////////
+                        ///////////////////////
+                    } if (keyCode === 40) {
+                        key.zen = false;
+                        ///////////////////////
+                    } else if (keyCode === 37) {
+                        key.left = false;
+                    }
+                    if (key.right === false) {
+                        sprite.classList.remove('walk-right');
+                    } if (key.left === false) {
+                        sprite.classList.remove('walk-left');
+                        ////////////////////////////:
+                    } if (key.claque === false) {
+                        sprite.classList.remove('claque');
+                        //////////////////////////////////////:
+                        ////////////////////////////:
+                    } if (key.supersaian === false) {
+                        sprite.classList.remove('supersaian');
+                    }//////////////////////////////////////:
+                    if (key.zen === false) {
+                        sprite.classList.remove('zen');
+
+                    //////////////////////////////////////:
+                    }//////////////////////////////////////:
+                    if (key.shot === false) {
+                        sprite.classList.remove('shot');
+
+                    }//////////////////////////////////////:
+                }
+
+
+                document.addEventListener('keydown', walk, false);
+                document.addEventListener('keyup', stop, false);
+                document.addEventListener('keyclaque', claque, false);
+                document.addEventListener('keyzen', zen, false);
+                document.addEventListener('keysupersaian', supersaian, false);
+                document.addEventListener('keyshot', shot, false);
+                //teste touch pad
+                document.addEventListener("keydown", keyDownHandler, false);//a revoir (finaliser la    )
+                document.addEventListener("keyup", keyUpHandler, false);
+                document.addEventListener("mousemove", mouseMoveHandler, false);
+            })();
+
+
+
+        </script>
+       
+
+    </body>
+    </head>
+
+    <footer>
+      
+    </footer>
+
+</html>
