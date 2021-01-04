@@ -1,0 +1,8 @@
+Design adapté pour un casque audio (impédance d'environ 8 Ohms min)
+
+Le son réel est bien mieux que celui dans vidéo (ADC numérisation, adaptation d'impédance, etc...)
+
+Aucune référence particulière n'est nécessaire pour les ampli op. (General purpose)
+
+Alimentation recommandée: entre 6V et 12V
+
